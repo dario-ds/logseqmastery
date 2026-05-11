@@ -1,0 +1,111 @@
+<!--
+  Holding page for www.logseqmastery.com (systeme.io).
+  Copy the <style> block + the <div class="lm-page"> below into a Custom HTML
+  block in the systeme.io page builder. Self-contained — no external assets
+  beyond Google Fonts.
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Slab:wght@400;600&display=swap');
+
+  .lm-page {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    line-height: 1.6;
+  }
+  .lm-page h1 {
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-size: 2.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.75rem;
+    color: #1a1a1a;
+  }
+  .lm-page p {
+    font-size: 1.0625rem;
+    color: #5a5a5a;
+    margin: 0 0 1.25rem;
+  }
+  .lm-page strong {
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+  .lm-page code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.95em;
+  }
+  .lm-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 2rem 0;
+  }
+  .lm-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+  .lm-btn-primary {
+    background: #3f7290;
+    color: #ffffff;
+  }
+  .lm-btn-primary:hover {
+    background: #34607a;
+  }
+  .lm-btn-secondary {
+    background: transparent;
+    color: #1a1a1a;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  .lm-btn-secondary:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+  }
+  .lm-aside {
+    font-size: 0.9375rem;
+    color: #5a5a5a;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .lm-signoff {
+    font-size: 0.9375rem;
+    color: #5a5a5a;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+</style>
+
+<div class="lm-page">
+  <h1>The landing page for Logseq Mastery has moved.</h1>
+
+  <p>
+    It now lives at <strong>logseqmastery.com</strong> (no <code>www</code>). That's where you'll find the course details, syllabus, and pricing.
+  </p>
+
+  <p>
+    The course itself is still where it always was: <strong>www.logseqmastery.com/school</strong>.
+  </p>
+
+  <div class="lm-buttons">
+    <a href="https://logseqmastery.com" class="lm-btn lm-btn-primary">Go to logseqmastery.com</a>
+    <a href="https://www.logseqmastery.com/school" class="lm-btn lm-btn-secondary">Go to the course</a>
+  </div>
+
+  <p class="lm-aside">
+    The split is a side effect of moving the landing page off the same platform that hosts the course. The two now live on different sides of a <code>www</code>. Not ideal, but here we are.
+  </p>
+
+  <p class="lm-signoff">Thanks for coming to my TED talk.</p>
+</div>
