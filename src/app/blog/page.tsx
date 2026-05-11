@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
@@ -36,21 +37,53 @@ export default function BlogIndexPage() {
         </p>
       ) : (
         <ul className="mt-12 divide-y divide-black/10">
-          {posts.map((p) => (
-            <li key={p.slug} className="py-6">
-              <Link href={`/blog/${p.slug}`} className="group block">
-                <h2 className="font-serif text-2xl group-hover:text-accent transition-colors">
-                  {p.title}
-                </h2>
-                {p.description && (
-                  <p className="mt-2 text-ink-muted">{p.description}</p>
-                )}
-                <p className="mt-2 text-sm text-ink-muted">
-                  {formatDate(p.date)}
-                </p>
-              </Link>
-            </li>
-          ))}
+          {posts.map((p) => {
+            const hasCover = Boolean(p.cover && p.coverWidth && p.coverHeight);
+            return (
+              <li key={p.slug} className="py-6">
+                <Link
+                  href={`/blog/${p.slug}`}
+                  className="group flex gap-5 items-start"
+                >
+                  {hasCover && (
+                    <div className="hidden sm:block w-56 shrink-0 rounded-md overflow-hidden">
+                      <Image
+                        src={p.cover!}
+                        width={p.coverWidth!}
+                        height={p.coverHeight!}
+                        alt={p.coverAlt ?? p.title}
+                        sizes="224px"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <h2 className="font-serif text-2xl group-hover:text-accent transition-colors">
+                      {p.title}
+                    </h2>
+                    {p.description && (
+                      <p className="mt-2 text-ink-muted">{p.description}</p>
+                    )}
+                    <p className="mt-2 text-sm text-ink-muted">
+                      {formatDate(p.date)} · {p.readingMinutes} min read
+                    </p>
+                    {p.tags && p.tags.length > 0 && (
+                      <ul className="mt-2 flex flex-wrap gap-2">
+                        {p.tags.map((tag) => (
+                          <li
+                            key={tag}
+                            className="px-2.5 py-0.5 rounded-full text-xs bg-surface-subtle text-ink-muted border border-black/10"
+                          >
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </section>

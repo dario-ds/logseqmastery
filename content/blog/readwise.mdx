@@ -1,0 +1,49 @@
+---
+title: "Streamlining Your Digital Notes: Readwise Meets Logseq"
+description: "Learn how to streamline your digital note-taking by integrating Readwise with Logseq. Effortlessly import Kindle highlights and organize your notes"
+date: "2024-08-29"
+draft: false
+tags: ["How-to guides"]
+cover: "/images/blog/readwise.png"
+coverWidth: 1434
+coverHeight: 1003
+coverAlt: "Readwise and Logseq"
+---
+
+If you’re into personal knowledge management, you've likely heard of Readwise. Many others in the personal knowledge management field have reviewed Readwise, so this is not another detailed review. Instead, I'll share how I use Readwise to import Kindle highlights into Logseq. I usually prefer reading physical books, but sometimes new books aren't available in my country, and Kindle wins on convenience.
+
+This content was inspired in preparation for an interview with Bob Doto, the author of *A System for Writing,* which explores using Zettelkasten for writing. It's a great read for anyone serious about writing, especially if you're interested in learning more about the zettelkasten systems. I’ve linked the book [here](https://amzn.to/4fWvMJt) if you want to read it for yourself (affiliate link).
+
+<YouTubeEmbed videoId="YqsZB3hz4Ps" title="Video" />
+
+### My Readwise settings as discussed in the video
+
+**Page title:**
+
+&#123;&#123;title|replace('.','')|replace('#','')&#125;&#125;
+
+**Page metadata:**
+
+producer:: [[&#123;&#123;author&#125;&#125;]]
+
+input:: [[&#123;&#123;category&#125;&#125;]]
+
+source:: [[Readwise import]]
+
+status:: [[to/process]]
+
+&#123;% if url %&#125;link:: &#123;&#123;url&#125;&#125;\&#123;% endif %&#125;
+
+&#123;% if document_tags %&#125;tags:: &#123;% for tag in document_tags %&#125; #&#123;&#123;tag&#125;&#125;&#123;% endfor %&#125;\&#123;% endif %&#125;
+
+**Highlights header:**
+
+## Passages
+
+**Highlight:**
+
+>&#123;&#123; highlight_text|replace('#','') &#125;&#125;&#123;% if highlight_location and highlight_location_url %&#125; ([&#123;&#123;highlight_location&#125;&#125;](&#123;&#123;highlight_location_url&#125;&#125;))&#123;% elif highlight_location %&#125; (&#123;&#123;highlight_location&#125;&#125;)&#123;% endif %&#125;&#123;% if highlight_tags %&#125;&#123;% for tag in highlight_tags %&#125; #[[&#123;&#123;tag&#125;&#125;]]&#123;% endfor %&#125;
+
+&#123;% endif %&#125;
+
+&#123;% if highlight_note %&#125;&#123;&#123; highlight_note &#125;&#125;&#123;% endif %&#125;

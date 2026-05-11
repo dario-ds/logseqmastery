@@ -41,3 +41,7 @@ next-env.d.ts
 # editors
 .idea/
 .vscode/
+
+# migration script local cache
+.migrate-cache/
+scripts/__pycache__/

@@ -41,14 +41,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoSlab.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${robotoSlab.variable}`}
+    >
       <body className="min-h-screen flex flex-col font-sans">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
         {/* Lemon Squeezy button auto-binding — picks up any element with class "lemonsqueezy-button". */}
         <Script
-          src="https://app.lemonsqueezy.com/js/lemon.js"
+          src="https://assets.lemonsqueezy.com/lemon.js"
           strategy="lazyOnload"
         />
         {/* ParityDeals — purchasing-power parity banner / discount codes.

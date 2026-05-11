@@ -83,14 +83,49 @@ const assets = [
     path: "favicon-combiningminds.png",
   },
 
-  // Blog OG / featured image for /blog/best-beginner-logseq-videos.
-  // Currently NOT referenced — the blog post MDX doesn't reference a hero
-  // image, and OG metadata is generated from frontmatter. Downloaded so it
-  // can be wired into the post (or its OG metadata) when you want a custom
-  // image. Safe to remove if you don't plan to use it.
+  // Blog cover images. Each one is the systeme.io OG image for that post,
+  // rendered as the hero on the post page and as a thumbnail on the blog
+  // index. The path matches the canonical location read by
+  // src/lib/posts.ts via the `cover` frontmatter field.
   {
     url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/64fb04423b830_learning.png",
     path: "blog/best-beginner-logseq-videos.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/64fad446cc4b5_CustomCSS.png",
+    path: "blog/adding-custom-css-to-logseq.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/63d39a08f3a01_omniLogseq.png",
+    path: "blog/how-i-use-omnivore-in-my-read-it-later-workflow.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/63ecd2ea814bb_ITE2.png",
+    path: "blog/logseq-integrated-thinking-environment.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/64faffaa29c4d_Namespace.png",
+    path: "blog/logseq-namespaces.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/64faff86ec9f7_templates.png",
+    path: "blog/logseq-templates.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/64fadbfbd8e72_obsidian.png",
+    path: "blog/logseq-vs-obsidian.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/64fb09a9c0217_ppp.png",
+    path: "blog/purchasing-power-parity-pricing.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/63d3992782c31_query.png",
+    path: "blog/queries-in-logseq.png",
+  },
+  {
+    url: "https://d1yei2z3i6k35z.cloudfront.net/1932909/66d0665831a3d_BlogThumbnail.png",
+    path: "blog/readwise.png",
   },
 ];
 
