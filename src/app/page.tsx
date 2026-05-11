@@ -1,8 +1,13 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
+import { FamewallEmbed } from "@/components/FamewallEmbed";
+
+const CHECKOUT_URL =
+  "https://combiningminds.lemonsqueezy.com/checkout/buy/7f1b558a-e380-41be-b19e-b66d36c90457?embed=1";
 
 const painPoints = [
   {
-    bold: "\"Where did I put that note?\"",
+    bold: "“Where did I put that note?”",
     body: "Your best insights vanish into the void of scattered systems — that brilliant idea now buried in meeting notes from three months ago.",
   },
   {
@@ -11,15 +16,15 @@ const painPoints = [
   },
   {
     bold: "The déjà vu of recreating work",
-    body: "you're certain you've already done — rediscovering the same articles, rewriting the same summaries, rebuilding the same arguments.",
+    body: "you’re certain you’ve already done — rediscovering the same articles, rewriting the same summaries, rebuilding the same arguments.",
   },
   {
     bold: "The nagging anxiety of forgotten knowledge",
-    body: "— knowing you've captured valuable information somewhere but can't access it when you actually need it.",
+    body: "knowing you’ve captured valuable information somewhere but can’t access it when you actually need it.",
   },
   {
     bold: "Time wasted on low-value organization",
-    body: "— constantly reorganizing folders and notebooks without improving your ability to find what matters.",
+    body: "constantly reorganizing folders and notebooks without improving your ability to find what matters.",
   },
 ];
 
@@ -46,31 +51,37 @@ const outcomes = [
   },
 ];
 
+// Heroicon-style outline paths used in the "What you'll learn" cards.
 const features = [
   {
-    bold: "Capture ideas without friction",
+    title: "Capture ideas without friction",
     body: "Stop losing valuable thoughts with quick-capture techniques that take seconds, not minutes.",
+    icon: "M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z",
   },
   {
-    bold: "Organize with purpose",
+    title: "Organize with purpose",
     body: "Learn the exact structure needed to create meaningful connections between notes and ideas.",
+    icon: "M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z",
   },
   {
-    bold: "Master Logseq's power features",
+    title: "Master Logseq’s power features",
     body: "From PDF annotation to spaced repetition, queries to whiteboards — use the full toolkit for maximum benefit.",
+    icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z",
   },
   {
-    bold: "Find exactly what you need, when you need it",
+    title: "Find exactly what you need, when you need it",
     body: "Surface the right information at precisely the right time with powerful retrieval methods.",
+    icon: "M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z",
   },
   {
-    bold: "Build a system that lasts",
+    title: "Build a system that lasts",
     body: "Maintain and grow your knowledge base with practices that keep it valuable for years, not just months.",
+    icon: "M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z",
   },
 ];
 
-// Institutional social-proof logos shown on the live site, in order.
-// Images are downloaded by scripts/download-images.mjs (prompt 4) to /public/images/logos/.
+// Institutional social-proof logos shown on the live home page, in order.
+// Images downloaded by scripts/download-images.mjs to /public/images/logos/.
 const logos = [
   { src: "/images/logos/oxford.png", alt: "Oxford" },
   { src: "/images/logos/microsoft.png", alt: "Microsoft" },
@@ -82,27 +93,37 @@ const logos = [
   { src: "/images/logos/acca.png", alt: "ACCA" },
 ];
 
-const pricingBullets = [
-  "Once-off purchase",
-  "More than 100 in-depth video tutorials",
-  "Detailed workflow walkthroughs",
-  "Lifetime access to updates",
+const pricingBullets: { content: ReactNode }[] = [
+  { content: <><strong>Once-off</strong> purchase</> },
+  { content: <>More than <strong>100 in-depth video tutorials</strong></> },
+  { content: <>Detailed workflow walkthroughs</> },
+  { content: <>Lifetime access to updates</> },
 ];
 
-const faqs = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "Why buy the course rather than go through your free resources?",
     a: (
       <>
         The course offers a structured approach to learning and mastering Logseq
-        from the bottom-up, so that you don't need to navigate through a bunch
-        of different YouTube tutorials. You'll learn about the application in
-        detail, ensuring that you don't miss out on any critical features or
-        functionality. As the saying goes,{" "}
+        from the bottom-up, so that you don&rsquo;t need to navigate through a
+        bunch of different YouTube tutorials. You&rsquo;ll learn about the
+        application in detail, ensuring that you don&rsquo;t miss out on any
+        critical features or functionality. As the saying goes,{" "}
         <strong>&ldquo;you don&rsquo;t know, what you don&rsquo;t know&rdquo;.</strong>{" "}
         If you&rsquo;re mainly interested in the free content, take a look at
-        the <Link href="/blog" className="underline">blog</Link> and my{" "}
-        <Link href="/blog/best-beginner-logseq-videos" className="underline">
+        the{" "}
+        <Link
+          href="/blog"
+          className="text-accent underline underline-offset-2 hover:text-accent-hover"
+        >
+          blog
+        </Link>{" "}
+        and my{" "}
+        <Link
+          href="/blog/best-beginner-logseq-videos"
+          className="text-accent underline underline-offset-2 hover:text-accent-hover"
+        >
           best YouTube videos
         </Link>
         .
@@ -115,7 +136,7 @@ const faqs = [
   },
   {
     q: "How long is the course available for after purchase?",
-    a: "The course includes lifetime access. You only have to pay once, and you'll get full access to future updates without paying anything more.",
+    a: "The course includes lifetime access. You only have to pay once, and you’ll get full access to future updates without paying anything more.",
   },
   {
     q: "Is the course available in other languages, or are there subtitles?",
@@ -129,7 +150,7 @@ const faqs = [
         visit{" "}
         <a
           href="https://combiningminds.org/consulting/"
-          className="underline"
+          className="text-accent underline underline-offset-2 hover:text-accent-hover"
         >
           combiningminds.org/consulting
         </a>{" "}
@@ -195,33 +216,61 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-6 pt-20 pb-12 text-center">
-        <h1 className="font-serif text-4xl md:text-6xl tracking-tight leading-tight">
-          Stop taking notes, start building your{" "}
-          <em className="font-serif">Second Brain</em>
-        </h1>
-        <p className="mt-6 text-xl text-ink-muted max-w-3xl mx-auto">
-          Transform information overload into a database of insights
-        </p>
-        <p className="mt-6 text-lg text-ink-muted max-w-3xl mx-auto">
-          Master Logseq with a proven system used by knowledge workers at
-          leading institutions. <strong>Join over 1 000 thinkers</strong>{" "}
-          who&rsquo;ve levelled up their note-taking.
-        </p>
+      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
+        <div className="max-w-3xl">
+          <h1 className="font-serif text-4xl md:text-6xl tracking-tight leading-tight">
+            Stop taking notes, start building your{" "}
+            <em className="font-serif">Second Brain</em>
+          </h1>
+          <p className="mt-6 text-xl text-ink-muted leading-relaxed">
+            Transform information overload into a database of insights.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href={CHECKOUT_URL}
+              className="lemonsqueezy-button inline-flex items-center px-5 py-3 rounded-md bg-accent text-white hover:bg-accent-hover transition-colors"
+            >
+              Enroll now
+            </a>
+            <Link
+              href="/syllabus"
+              className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 transition-colors"
+            >
+              See the syllabus
+            </Link>
+            <Link
+              href="/blog/free-youtube-course-logseq"
+              className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 transition-colors"
+            >
+              Free YouTube course
+            </Link>
+          </div>
+        </div>
       </section>
 
-      {/* Institutional social-proof logo strip */}
-      <section className="mx-auto max-w-6xl px-6 py-10 border-t border-black/10">
-        <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 opacity-70">
+      {/* Institutional social-proof logo strip — uniform grid so the
+          logos read as a coherent set instead of free-floating images of
+          wildly different aspect ratios. */}
+      <section className="mx-auto max-w-6xl px-6 py-12 border-t border-black/10">
+        <p className="max-w-3xl text-lg text-ink-muted leading-relaxed">
+          Master Logseq with a proven system used by knowledge workers at
+          leading institutions.{" "}
+          <strong className="text-ink">Join over 1 000 thinkers</strong> who
+          have levelled up their note-taking.
+        </p>
+        <ul className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-8 items-center">
           {logos.map((logo) => (
-            <li key={logo.alt}>
-              {/* Using <img> rather than next/image so missing files don't
-                  fail the build before scripts/download-images.mjs has run. */}
+            <li
+              key={logo.alt}
+              className="flex items-center justify-center h-16"
+            >
+              {/* Logos are constrained on both axes so a wide mark (e.g.
+                  Coursera) doesn't dominate the row. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-8 md:h-10 w-auto object-contain"
+                className="max-h-10 md:max-h-12 max-w-[140px] w-auto object-contain"
               />
             </li>
           ))}
@@ -230,81 +279,138 @@ export default function HomePage() {
 
       {/* Pain points */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
-        <p className="text-lg text-ink-muted max-w-3xl">
-          In a world of endless information, traditional note-taking approaches
-          aren&rsquo;t just failing us —{" "}
-          <strong>they actively hold us back.</strong>
-        </p>
-        <p className="mt-4 text-lg text-ink-muted max-w-3xl">
-          As we scatter our thoughts across emails, physical notebooks,
-          different apps, and digital documents, we create a fragmented
-          information landscape that undermines our productivity.
-        </p>
-        <ul className="mt-10 space-y-5">
+        <div className="max-w-prose">
+          <p className="text-lg leading-relaxed">
+            In a world of endless information, traditional note-taking
+            approaches aren&rsquo;t just failing us —{" "}
+            <strong>they actively hold us back.</strong>
+          </p>
+          <p className="mt-6 text-lg leading-relaxed">
+            As we scatter our thoughts across emails, physical notebooks,
+            different apps, and digital documents, we create a fragmented
+            information landscape that undermines our productivity.
+          </p>
+        </div>
+
+        <ul className="mt-10 grid md:grid-cols-2 gap-6">
           {painPoints.map((p) => (
             <li
               key={p.bold}
-              className="rounded-lg bg-surface-subtle border border-black/10 p-5 text-ink-muted"
+              className="p-6 rounded-lg bg-surface-subtle text-lg leading-relaxed"
             >
-              <strong className="text-ink">{p.bold}</strong> {p.body}
+              <strong className="text-ink">{p.bold}</strong>{" "}
+              <span className="text-ink-muted">{p.body}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Bridge + outcomes */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
-        <p className="text-lg text-ink-muted max-w-3xl">
-          <strong>Managing information without a system is almost useless —</strong>{" "}
-          collecting notes that never connect to form the insights that could
-          transform your thinking and work. This is why thoughtful students and
-          professionals are abandoning conventional note-taking for something
-          more powerful: a living, interconnected knowledge system in Logseq
-          that aligns with the way your brain naturally makes associations.
-        </p>
-        <p className="mt-4 text-lg text-ink-muted max-w-3xl">
-          But without the right approach, Logseq becomes just another app where
-          information goes to die. <strong>Logseq Mastery bridges this gap.</strong>
-        </p>
-        <ul className="mt-10 space-y-4 text-ink-muted">
-          {outcomes.map((o) => (
-            <li key={o.bold}>
-              <strong className="text-ink">{o.bold}</strong> {o.body}
-            </li>
-          ))}
-        </ul>
+      {/* Bridge + outcomes — whole section on surface-subtle for rhythm */}
+      <section className="border-t border-black/10 bg-surface-subtle">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="max-w-prose space-y-6 text-lg leading-relaxed">
+            <p>
+              <strong>Managing information without a system is almost useless —</strong>{" "}
+              collecting notes that never connect to form the insights that
+              could transform your thinking and work. This is why thoughtful
+              students and professionals are abandoning conventional
+              note-taking for something more powerful: a living, interconnected
+              knowledge system in Logseq that aligns with the way your brain
+              naturally makes associations.
+            </p>
+            <p>
+              But without the right approach, Logseq becomes just another app
+              where information goes to die.{" "}
+              <strong>Logseq Mastery bridges this gap.</strong>
+            </p>
+          </div>
+
+          <ul className="mt-10 space-y-4 max-w-3xl">
+            {outcomes.map((o) => (
+              <li key={o.bold} className="flex items-start gap-3 text-lg leading-relaxed">
+                <svg
+                  className="w-6 h-6 mt-0.5 flex-shrink-0 text-accent"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 10.5l3.5 3.5L15 7" />
+                </svg>
+                <span>
+                  <strong className="text-ink">{o.bold}</strong>{" "}
+                  <span className="text-ink-muted">{o.body}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
-      {/* Features */}
+      {/* Features — what you'll learn */}
       <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
-        <p className="text-lg text-ink-muted max-w-3xl">
-          <strong>Save yourself countless hours</strong> trying to figure it out
-          for yourself and access insights not shared anywhere else.
-        </p>
-        <p className="mt-4 text-lg text-ink-muted max-w-3xl">
-          Logseq Mastery builds-up your knowledge of Logseq with a structured
-          approach, saving you hours of frustration trying to learn from
-          scattered resources. From the very basics to an advanced level, it
-          will provide{" "}
-          <strong>a valuable resource for you to come back to</strong> when you
-          hit snags later down the line and{" "}
-          <strong>
-            streamlines your learning process with text, diagrams and video.
-          </strong>
-        </p>
-        <ul className="mt-10 space-y-4 text-ink-muted">
+        <div className="max-w-prose space-y-6 text-lg leading-relaxed">
+          <p>
+            <strong>Save yourself countless hours</strong> trying to figure it
+            out for yourself and access insights not shared anywhere else.
+          </p>
+          <p>
+            Logseq Mastery builds up your knowledge of Logseq with a structured
+            approach, saving you hours of frustration trying to learn from
+            scattered resources. From the very basics to an advanced level, it
+            will provide{" "}
+            <strong>a valuable resource for you to come back to</strong> when
+            you hit snags later down the line and{" "}
+            <strong>
+              streamlines your learning process with text, diagrams and video.
+            </strong>
+          </p>
+        </div>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-6">
           {features.map((f) => (
-            <li key={f.bold}>
-              <strong className="text-ink">{f.bold}</strong> — {f.body}
-            </li>
+            <article
+              key={f.title}
+              className="p-8 rounded-lg border border-black/10 bg-white"
+            >
+              <div className="flex items-center gap-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 flex-shrink-0 rounded-lg bg-accent/10 text-accent">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    className="w-6 h-6"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d={f.icon}
+                    />
+                  </svg>
+                </div>
+                <h3 className="font-serif text-2xl leading-tight">
+                  {f.title}
+                </h3>
+              </div>
+              <p className="mt-4 text-ink-muted leading-relaxed">{f.body}</p>
+            </article>
           ))}
-        </ul>
-        <p className="mt-8 text-lg text-ink-muted max-w-3xl">
+        </div>
+
+        <p className="mt-12 max-w-prose text-lg leading-relaxed">
           Get access to a wealth of resources to smooth your path to success on
           your personal knowledge management journey.{" "}
           <strong>
             Have a look at{" "}
-            <Link href="/syllabus" className="underline">
+            <Link
+              href="/syllabus"
+              className="text-accent underline underline-offset-2 hover:text-accent-hover"
+            >
               the syllabus
             </Link>{" "}
             for more information.
@@ -313,49 +419,115 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials — JS-rendered on live site, fetch came back empty */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
-        <h2 className="font-serif text-3xl tracking-tight">
-          What existing users have said
-        </h2>
-        <p className="mt-6 text-ink-muted italic">
-          {/* TODO(dario): paste testimonial copy from the rendered live site.
-              Systeme.io widget — the home-page testimonial block did not come
-              through in the WebFetch and needs to be transcribed manually. */}
-          TODO: testimonials block — copy from live site manually
-        </p>
+      <section className="border-t border-black/10 bg-surface-subtle">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <h2 className="font-serif text-3xl tracking-tight">
+            What existing users have said
+          </h2>
+          <div className="mt-10">
+            <FamewallEmbed src="logseqmastery" format="grid" />
+          </div>
+        </div>
       </section>
 
       {/* Pricing */}
-      <section className="mx-auto max-w-3xl px-6 py-16 border-t border-black/10 text-center">
-        <p className="text-xl text-ink-muted">
-          Ready to build a <em>Second Brain</em> that{" "}
-          <strong>works as brilliantly as your first?</strong>
-        </p>
-        <h2 className="mt-4 font-serif text-4xl tracking-tight">
-          Logseq Mastery
-        </h2>
-        <p className="mt-6 text-3xl">
-          <span className="font-semibold">$80</span>{" "}
-          <span className="text-ink-muted line-through text-2xl">$149</span>
-        </p>
-        <ul className="mt-8 space-y-3 text-ink-muted text-left max-w-md mx-auto">
-          {pricingBullets.map((b) => (
-            <li key={b} className="flex items-start gap-3">
-              <span className="text-success mt-1">✓</span>
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
-        <a
-          href="https://combiningminds.lemonsqueezy.com/checkout/buy/7f1b558a-e380-41be-b19e-b66d36c90457?embed=1"
-          className="lemonsqueezy-button mt-10 inline-block bg-accent hover:bg-accent-hover text-white font-medium px-8 py-4 rounded-lg transition-colors"
-        >
-          Enroll now for full access
-        </a>
-        <p className="mt-6 text-sm text-ink-muted">
-          <strong>Risk-free purchase:</strong> Get your money back if
-          you&rsquo;re not satisfied with the quality.
-        </p>
+      <section className="border-t border-black/10 bg-surface-subtle">
+        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
+          <h2 className="font-serif text-3xl md:text-4xl tracking-tight">
+            Ready to build a <em className="font-serif">Second Brain</em> that
+            works as brilliantly as your first?
+          </h2>
+
+          {/* TODO(dario): refine this explainer to your preferred framing.
+              The current copy mirrors the "note on updates" line on the
+              syllabus page (Logseq team focused on the database version;
+              course content stays evergreen) and uses that to justify the
+              reduced price. Swap if you'd prefer a different angle. */}
+          <p className="mt-4 mx-auto max-w-xl text-base text-ink-muted leading-relaxed">
+            <strong className="text-ink">Why so cheap?</strong> Logseq has
+            reached a stable, mature state and the team&rsquo;s active focus
+            is on the database version. The course content stays evergreen
+            and applicable — and that&rsquo;s reflected in the price.
+          </p>
+
+          <div className="relative mt-12 mx-auto max-w-md rounded-2xl bg-white shadow-xl shadow-black/[0.07] ring-1 ring-black/5 overflow-hidden text-left">
+            <div className="h-1.5 bg-accent" />
+
+            <div className="p-10">
+              <div className="flex items-center justify-between gap-4">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-success/10 text-success text-xs font-semibold uppercase tracking-wide">
+                  Save $74 &middot; 50% off
+                </span>
+                <span className="text-sm text-ink-muted line-through">
+                  $149
+                </span>
+              </div>
+
+              <div className="mt-6 flex items-baseline gap-2">
+                <span className="font-serif text-7xl font-bold leading-none tracking-tight">
+                  $75
+                </span>
+                <span className="text-sm font-medium text-ink-muted">USD</span>
+              </div>
+              <p className="mt-2 text-xs uppercase tracking-wider text-ink-muted">
+                One-time payment &middot; Lifetime access
+              </p>
+
+              <p className="mt-6 text-base text-ink-muted leading-relaxed">
+                Logseq Mastery — a self-paced video course with detailed
+                workflow walkthroughs.
+              </p>
+
+              <ul className="mt-6 space-y-3 text-ink">
+                {pricingBullets.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 mt-0.5 flex-shrink-0 text-accent"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 10.5l3.5 3.5L15 7" />
+                    </svg>
+                    <span>{item.content}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={CHECKOUT_URL}
+                className="lemonsqueezy-button mt-8 inline-flex items-center justify-center w-full px-6 py-4 rounded-md bg-accent text-white hover:bg-accent-hover transition-all font-semibold text-base shadow-md shadow-accent/20 hover:shadow-lg hover:shadow-accent/30"
+              >
+                Enroll now for full access
+              </a>
+
+              <p className="mt-5 flex items-center justify-center gap-2 text-sm text-ink-muted">
+                <svg
+                  className="w-4 h-4 flex-shrink-0 text-accent"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M10 2.5l6.5 2.25v5.25c0 4-2.8 6.5-6.5 7.5-3.7-1-6.5-3.5-6.5-7.5V4.75L10 2.5z" />
+                  <path d="M7.25 10.25l2 2 3.75-4" />
+                </svg>
+                <span>
+                  <strong className="text-ink">
+                    Risk-free, 30-day money-back guarantee
+                  </strong>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ */}
@@ -363,7 +535,8 @@ export default function HomePage() {
         <h2 className="font-serif text-3xl tracking-tight">
           Frequently asked questions
         </h2>
-        <div className="mt-8 divide-y divide-black/10">
+
+        <div className="mt-10 divide-y divide-black/10">
           {faqs.map((f) => (
             <details key={f.q} className="group py-5">
               <summary className="cursor-pointer list-none flex items-start justify-between gap-4">
@@ -372,40 +545,20 @@ export default function HomePage() {
                   +
                 </span>
               </summary>
-              <div className="mt-3 text-ink-muted">{f.a}</div>
+              <div className="mt-3 text-ink-muted leading-relaxed">{f.a}</div>
             </details>
           ))}
         </div>
+
         <p className="mt-10 text-ink-muted">
-          If you have more questions, please send me an email at dario
-          &lsquo;at&rsquo; combiningminds &lsquo;dot&rsquo; org 🙏🏼
+          If you have more questions, please send me an email at{" "}
+          <span className="font-medium">
+            dario &lsquo;at&rsquo; combiningminds &lsquo;dot&rsquo; org
+          </span>{" "}
+          🙏🏼
         </p>
       </section>
 
-      {/* Lead-capture form — Systeme.io 5-day intro */}
-      <section className="mx-auto max-w-3xl px-6 py-16 border-t border-black/10">
-        <h2 className="font-serif text-3xl tracking-tight">
-          Want to see more before you buy?
-        </h2>
-        <p className="mt-4 text-ink-muted">
-          Enter your details below and you&rsquo;ll receive the introductory
-          module of Logseq Mastery in your inbox over the next five days.
-          There&rsquo;s no videos in this module, but it should give you a good
-          taste of what&rsquo;s to come.
-        </p>
-        <div className="mt-8 rounded-lg border border-black/10 bg-surface-subtle p-6 text-ink-muted text-sm italic">
-          {/* TODO(dario): wire up the lead-capture form integration.
-              The live site uses Systeme.io for this 5-day intro sequence.
-              Decide whether to mirror Systeme.io, swap to ConvertKit/Mailchimp,
-              or self-host. Until then this is a non-functional placeholder. */}
-          TODO: wire up form integration (Systeme.io on live site).
-        </div>
-        <p className="mt-6 text-sm text-ink-muted">
-          I hope it goes without saying, but I will never spam you or pass on
-          your information. Saying it anyways just-in-case. Unsubscribe at any
-          time.
-        </p>
-      </section>
     </>
   );
 }

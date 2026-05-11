@@ -1,0 +1,28 @@
+{
+  "_comment": "Copy this to .claude/settings.json after running git init. The .claude/ path is protected from direct write by Claude Code itself, so this template lives at the repo root for now.",
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run build)",
+      "Bash(npm run dev)",
+      "Bash(npm run lint)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run start)",
+      "Bash(npm audit)",
+      "Bash(npm audit *)",
+      "Bash(npx *)",
+      "Bash(gh auth *)",
+      "PowerShell(gh --version 2>&1)",
+      "PowerShell(gh auth status 2>&1)",
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)"
+    ]
+  }
+}
