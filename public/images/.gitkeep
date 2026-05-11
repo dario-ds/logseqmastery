@@ -1,0 +1,3 @@
+# Placeholder so the empty /public/images directory commits.
+# scripts/download-images.mjs populates this folder with content from the
+# Systeme.io CDN. Delete this file once images exist.
