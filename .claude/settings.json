@@ -1,5 +1,4 @@
 {
-  "_comment": "Copy this to .claude/settings.json after running git init. The .claude/ path is protected from direct write by Claude Code itself, so this template lives at the repo root for now.",
   "permissions": {
     "allow": [
       "Bash(npm install *)",
@@ -22,7 +21,21 @@
       "Bash(git fetch *)",
       "Bash(git status)",
       "Bash(git diff *)",
-      "Bash(git log *)"
+      "Bash(git log *)",
+      "WebFetch(domain:www.logseqmastery.com)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://www.logseqmastery.com/blog?page=2\" -o blog-page2.html)",
+      "Bash(python -c \"import re; f=open\\('blog-page2.html'\\).read\\(\\); m=re.search\\(r'\\\\\"blogPostListing\\\\\":\\\\\"\\(.+?\\)\\\\\",\\\\\"blogPostTitle', f\\); print\\(m.group\\(1\\) if m else 'no match'\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://www.logseqmastery.com/blog/readwise\" -o post-sample.html)",
+      "Bash(python)",
+      "Bash(grep -o 'PRELOADED_STATE[^=]*=.\\\\{0,200\\\\}' post-sample.html)",
+      "Bash(python scripts/parse-post.py post-sample.html)",
+      "Bash(python -c \"import markdownify; print\\(markdownify.__version__\\)\")",
+      "Bash(python -c \"import html2text; print\\(html2text.__version__\\)\")",
+      "Bash(pip install *)",
+      "Bash(python scripts/migrate-blog.py)",
+      "PowerShell($src = \"c:/developer/logseqmastery/public/blog\"; $dst = \"c:/developer/logseqmastery/public/images/blog\"; New-Item -ItemType Directory -Force -Path $dst | Out-Null; Get-ChildItem -Path $src -Directory | ForEach-Object { $slug = $_.Name; $heroPath = Join-Path $_.FullName \"hero.png\"; if \\(Test-Path $heroPath\\) { Copy-Item $heroPath \\(Join-Path $dst \"$slug.png\"\\) -Force; Write-Output \"copied: $slug.png\" } })"
     ]
-  }
+  },
+  "_comment": "Copy this to .claude/settings.json after running git init. The .claude/ path is protected from direct write by Claude Code itself, so this template lives at the repo root for now."
 }

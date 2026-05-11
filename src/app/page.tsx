@@ -97,7 +97,7 @@ const pricingBullets: { content: ReactNode }[] = [
   { content: <><strong>Once-off</strong> purchase</> },
   { content: <>More than <strong>100 in-depth video tutorials</strong></> },
   { content: <>Detailed workflow walkthroughs</> },
-  { content: <>Lifetime access to updates</> },
+  { content: <>Lifetime access to everything in the course</> },
 ];
 
 const faqs: { q: string; a: ReactNode }[] = [
@@ -136,7 +136,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "How long is the course available for after purchase?",
-    a: "The course includes lifetime access. You only have to pay once, and you’ll get full access to future updates without paying anything more.",
+    a: "The course includes lifetime access. You only have to pay once, and you’ll keep full access to everything that’s in it. The course is in maintenance mode — no new lessons are planned — but the fundamentals remain applicable, which is why the price has been reduced.",
   },
   {
     q: "Is the course available in other languages, or are there subtitles?",
@@ -438,16 +438,12 @@ export default function HomePage() {
             works as brilliantly as your first?
           </h2>
 
-          {/* TODO(dario): refine this explainer to your preferred framing.
-              The current copy mirrors the "note on updates" line on the
-              syllabus page (Logseq team focused on the database version;
-              course content stays evergreen) and uses that to justify the
-              reduced price. Swap if you'd prefer a different angle. */}
           <p className="mt-4 mx-auto max-w-xl text-base text-ink-muted leading-relaxed">
-            <strong className="text-ink">Why so cheap?</strong> Logseq has
-            reached a stable, mature state and the team&rsquo;s active focus
-            is on the database version. The course content stays evergreen
-            and applicable — and that&rsquo;s reflected in the price.
+            <strong className="text-ink">Maintenance-mode pricing.</strong> No
+            new lessons are coming — the Logseq team has shifted focus to the
+            database version, so the course is no longer being added to. But
+            the fundamentals don&rsquo;t go stale.{" "}
+            <strong className="text-ink">That&rsquo;s the discount.</strong>
           </p>
 
           <div className="relative mt-12 mx-auto max-w-md rounded-2xl bg-white shadow-xl shadow-black/[0.07] ring-1 ring-black/5 overflow-hidden text-left">
