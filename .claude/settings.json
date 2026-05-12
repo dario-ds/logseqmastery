@@ -34,7 +34,11 @@
       "Bash(python -c \"import html2text; print\\(html2text.__version__\\)\")",
       "Bash(pip install *)",
       "Bash(python scripts/migrate-blog.py)",
-      "PowerShell($src = \"c:/developer/logseqmastery/public/blog\"; $dst = \"c:/developer/logseqmastery/public/images/blog\"; New-Item -ItemType Directory -Force -Path $dst | Out-Null; Get-ChildItem -Path $src -Directory | ForEach-Object { $slug = $_.Name; $heroPath = Join-Path $_.FullName \"hero.png\"; if \\(Test-Path $heroPath\\) { Copy-Item $heroPath \\(Join-Path $dst \"$slug.png\"\\) -Force; Write-Output \"copied: $slug.png\" } })"
+      "PowerShell($src = \"c:/developer/logseqmastery/public/blog\"; $dst = \"c:/developer/logseqmastery/public/images/blog\"; New-Item -ItemType Directory -Force -Path $dst | Out-Null; Get-ChildItem -Path $src -Directory | ForEach-Object { $slug = $_.Name; $heroPath = Join-Path $_.FullName \"hero.png\"; if \\(Test-Path $heroPath\\) { Copy-Item $heroPath \\(Join-Path $dst \"$slug.png\"\\) -Force; Write-Output \"copied: $slug.png\" } })",
+      "WebSearch",
+      "WebFetch(domain:hub.logseq.com)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:web.archive.org)"
     ]
   },
   "_comment": "Copy this to .claude/settings.json after running git init. The .claude/ path is protected from direct write by Claude Code itself, so this template lives at the repo root for now."

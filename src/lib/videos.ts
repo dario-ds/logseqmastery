@@ -17,16 +17,16 @@
  */
 
 export const VIDEOS = {
-  // /blog/free-youtube-course-logseq — 8 videos (TODO(dario): confirm exact count)
+  // /blog/free-youtube-course-logseq — 8 videos
   freeYoutubeCourse: {
-    whatsSoSpecial: null as string | null, // "What's so special about Logseq?"
-    settingUp: null as string | null, // "Setting up Logseq on your computer"
-    blocksAndPages: null as string | null, // "Introduction to blocks and pages"
-    biDirectionalLinks: null as string | null, // "Adding structure with bi-directional links"
-    tagging: null as string | null, // "Tagging for task management, spaced-repetition..."
-    uiAndBlockRefs: null as string | null, // "Maximising the user interface, and an intro to block references"
-    menusAndGraph: null as string | null, // "Exploring the menus and other user interface elements"
-    settingForSuccess: null as string | null, // "Setting yourself up for success on Logseq"
+    whatsSoSpecial: "oBtKHwFBn0k" as string | null,
+    settingUp: "jtJUN-L7kSs" as string | null,
+    blocksAndPages: "3OgHp12xhSI" as string | null,
+    biDirectionalLinks: "MapLiIRQXDs" as string | null,
+    tagging: "zyFcvET62PY" as string | null,
+    uiAndBlockRefs: "rc1act1aQes" as string | null,
+    menusAndGraph: "Clud7iTV7O4" as string | null,
+    settingForSuccess: "QYE_HGGwTYU" as string | null,
   },
 
   // /blog/best-beginner-logseq-videos — 4 videos
