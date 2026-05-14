@@ -67,12 +67,12 @@ export default function AboutPage() {
                 , or if you&rsquo;re more interested in behind-the-scenes
                 personal life, my blog is{" "}
                 <a
-                  href="https://dariodasilva.blog/"
+                  href="https://onestaggeringmind.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent underline underline-offset-2 hover:text-accent-hover"
                 >
-                  dariodasilva.blog
+                  onestaggeringmind.com
                 </a>
                 .
               </p>

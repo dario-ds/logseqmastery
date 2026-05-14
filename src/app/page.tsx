@@ -93,6 +93,33 @@ const logos = [
   { src: "/images/logos/acca.png", alt: "ACCA" },
 ];
 
+const audience = [
+  {
+    title: "Researchers & academics",
+    body: "Managing literature reviews, lecture notes, and long-running projects that demand reliable retrieval across hundreds of sources.",
+  },
+  {
+    title: "Knowledge workers",
+    body: "Drowning in meetings, documents, and context switches who need a single system that keeps everything connected.",
+  },
+  {
+    title: "Writers & content creators",
+    body: "Looking to turn scattered reading and research into a compounding library of ideas they can draw on for any project.",
+  },
+  {
+    title: "Lifelong learners",
+    body: "Who want to retain and build on what they read instead of forgetting it a week later.",
+  },
+  {
+    title: "Logseq beginners",
+    body: "Wanting to unlock the app's full potential without months of frustrating trial and error.",
+  },
+  {
+    title: "Experienced users",
+    body: "Looking to refine their system and discover features they've been overlooking.",
+  },
+];
+
 const pricingBullets: { content: ReactNode }[] = [
   { content: <><strong>Once-off</strong> purchase</> },
   { content: <>More than <strong>100 in-depth video tutorials</strong></> },
@@ -136,7 +163,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "How long is the course available for after purchase?",
-    a: "The course includes lifetime access. You only have to pay once, and you’ll keep full access to everything that’s in it. The course is in maintenance mode — no new lessons are planned — but the fundamentals remain applicable, which is why the price has been reduced.",
+    a: "Lifetime access. You pay once and keep full access to everything in the course — every video, walkthrough, and supporting resource. The fundamentals of building a Logseq-based knowledge system don’t go stale, and you can come back to the material whenever you hit a snag. The course is in maintenance mode (no new lessons planned), which is why it’s now half the original price.",
   },
   {
     q: "Is the course available in other languages, or are there subtitles?",
@@ -418,6 +445,27 @@ export default function HomePage() {
         </p>
       </section>
 
+      {/* Who is the course for */}
+      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
+        <h2 className="font-serif text-3xl tracking-tight">
+          Who is the course for?
+        </h2>
+
+        <ul className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {audience.map((a) => (
+            <li
+              key={a.title}
+              className="p-6 rounded-lg bg-surface-subtle"
+            >
+              <h3 className="font-serif text-xl">{a.title}</h3>
+              <p className="mt-2 text-sm text-ink-muted leading-relaxed">
+                {a.body}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* Testimonials — JS-rendered on live site, fetch came back empty */}
       <section className="border-t border-black/10 bg-surface-subtle">
         <div className="mx-auto max-w-6xl px-6 py-16">
@@ -439,11 +487,10 @@ export default function HomePage() {
           </h2>
 
           <p className="mt-4 mx-auto max-w-xl text-base text-ink-muted leading-relaxed">
-            <strong className="text-ink">Maintenance-mode pricing.</strong> No
-            new lessons are coming — the Logseq team has shifted focus to the
-            database version, so the course is no longer being added to. But
-            the fundamentals don&rsquo;t go stale.{" "}
-            <strong className="text-ink">That&rsquo;s the discount.</strong>
+            Over <strong className="text-ink">100 in-depth tutorials</strong>,
+            detailed workflow walkthroughs, and a structured path from the
+            basics to advanced mastery — yours for life, at half the original
+            price.
           </p>
 
           <div className="relative mt-12 mx-auto max-w-md rounded-2xl bg-white shadow-xl shadow-black/[0.07] ring-1 ring-black/5 overflow-hidden text-left">
