@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "About instructor",
   description:
     "I enjoy exploring the practice of personal knowledge management in the context of improving overall well-being, and using software in general to deliver operational improvements.",
+  alternates: {
+    canonical: "https://logseqmastery.com/about",
+  },
 };
 
 export default function AboutPage() {

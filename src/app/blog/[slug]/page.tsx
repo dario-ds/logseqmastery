@@ -37,6 +37,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: `https://logseqmastery.com/blog/${slug}`,
+    },
     openGraph: images ? { title: post.title, description: post.description, images } : undefined,
     twitter: images
       ? { card: "summary_large_image", title: post.title, description: post.description, images }

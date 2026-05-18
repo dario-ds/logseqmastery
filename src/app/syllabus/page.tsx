@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Syllabus",
   description:
     "Logseq Mastery builds up your Logseq knowledge with a structured approach that you won't find in any YouTube videos.",
+  alternates: {
+    canonical: "https://logseqmastery.com/syllabus",
+  },
 };
 
 // Tutorials — bold lead + body where the source highlights specific phrases.

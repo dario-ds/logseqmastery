@@ -6,6 +6,9 @@ import { getAllPosts } from "@/lib/posts";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Notes on Logseq, PKM, and intentional knowledge work.",
+  alternates: {
+    canonical: "https://logseqmastery.com/blog",
+  },
 };
 
 function formatDate(iso: string) {

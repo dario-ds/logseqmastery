@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   description:
     "Learn how to use Logseq to build an integrated note-taking & personal knowledge management system. Take control of the information firehose.",
   metadataBase: new URL("https://logseqmastery.com"),
+  alternates: {
+    canonical: "https://logseqmastery.com",
+  },
   openGraph: {
     title: "Logseq Mastery",
     description:
