@@ -163,7 +163,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "How long is the course available for after purchase?",
-    a: "Lifetime access. You pay once and keep full access to everything in the course — every video, walkthrough, and supporting resource. The fundamentals of building a Logseq-based knowledge system don’t go stale, and you can come back to the material whenever you hit a snag. The course is in maintenance mode (no new lessons planned), which is why it’s now half the original price.",
+    a: "Lifetime access. You pay once and keep full access to everything in the course — every video, walkthrough, and supporting resource. The fundamentals of building a Logseq-based knowledge system don’t go stale, and you can come back to the material whenever you hit a snag. The course is in maintenance mode (no new lessons planned), which is why it’s now a fraction of the original price.",
   },
   {
     q: "Is the course available in other languages, or are there subtitles?",
@@ -489,26 +489,16 @@ export default function HomePage() {
           <p className="mt-4 mx-auto max-w-xl text-base text-ink-muted leading-relaxed">
             Over <strong className="text-ink">100 in-depth tutorials</strong>,
             detailed workflow walkthroughs, and a structured path from the
-            basics to advanced mastery — yours for life, at half the original
-            price.
+            basics to advanced mastery — yours for life.
           </p>
 
           <div className="relative mt-12 mx-auto max-w-md rounded-2xl bg-white shadow-xl shadow-black/[0.07] ring-1 ring-black/5 overflow-hidden text-left">
             <div className="h-1.5 bg-accent" />
 
             <div className="p-10">
-              <div className="flex items-center justify-between gap-4">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-success/10 text-success text-xs font-semibold uppercase tracking-wide">
-                  Save $74 &middot; 50% off
-                </span>
-                <span className="text-sm text-ink-muted line-through">
-                  $149
-                </span>
-              </div>
-
-              <div className="mt-6 flex items-baseline gap-2">
+              <div className="flex items-baseline gap-2">
                 <span className="font-serif text-7xl font-bold leading-none tracking-tight">
-                  $75
+                  $59
                 </span>
                 <span className="text-sm font-medium text-ink-muted">USD</span>
               </div>
