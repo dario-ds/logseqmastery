@@ -155,17 +155,17 @@ export default function SyllabusPage() {
       </div>
 
       <ul className="mt-8 grid md:grid-cols-2 gap-6">
-        <li className="p-6 rounded-lg bg-surface-subtle leading-relaxed">
+        <li className="p-6 rounded-lg bg-surface-subtle dark:bg-white/5 leading-relaxed">
           <h2 className="font-serif text-2xl">Tutorials</h2>
-          <p className="mt-2 text-ink-muted">
+          <p className="mt-2 text-ink-muted dark:text-zinc-400">
             The point of departure. A step-by-step guide to becoming at home in
             Logseq, with detail on developing good practices for capturing,
             organizing and retrieving your notes.
           </p>
         </li>
-        <li className="p-6 rounded-lg bg-surface-subtle leading-relaxed">
+        <li className="p-6 rounded-lg bg-surface-subtle dark:bg-white/5 leading-relaxed">
           <h2 className="font-serif text-2xl">Workflows</h2>
-          <p className="mt-2 text-ink-muted">
+          <p className="mt-2 text-ink-muted dark:text-zinc-400">
             A hub of ideas and implementation examples. Leverages my best
             thinking on personal knowledge management to help you build your
             ideal workflows.
@@ -193,7 +193,7 @@ export default function SyllabusPage() {
               >
                 <path d="M5 10.5l3.5 3.5L15 7" />
               </svg>
-              <span className="text-ink-muted">{t.content}</span>
+              <span className="text-ink-muted dark:text-zinc-400">{t.content}</span>
             </li>
           ))}
         </ul>
@@ -219,7 +219,7 @@ export default function SyllabusPage() {
               >
                 <path d="M5 10.5l3.5 3.5L15 7" />
               </svg>
-              <span className="text-ink-muted">{w.content}</span>
+              <span className="text-ink-muted dark:text-zinc-400">{w.content}</span>
             </li>
           ))}
         </ul>
@@ -227,7 +227,7 @@ export default function SyllabusPage() {
 
       <div className="mt-14">
         <h2 className="font-serif text-2xl tracking-tight">A note on updates</h2>
-        <div className="mt-6 space-y-4 text-ink-muted leading-relaxed">
+        <div className="mt-6 space-y-4 text-ink-muted dark:text-zinc-400 leading-relaxed">
           <p>
             The last major Logseq release was Apr 23rd, 2024. The Logseq team
             has been focused on the database version, which is currently in
@@ -253,7 +253,7 @@ export default function SyllabusPage() {
         </div>
       </div>
 
-      <div className="mt-16 p-6 rounded-lg border border-black/10 bg-surface-subtle">
+      <div className="mt-16 p-6 rounded-lg border border-black/10 dark:border-white/10 bg-surface-subtle dark:bg-white/5">
         <p className="text-lg">Like what you see?</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <a
@@ -264,7 +264,7 @@ export default function SyllabusPage() {
           </a>
           <Link
             href="/blog/free-youtube-course-logseq"
-            className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 transition-colors"
+            className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 dark:border-white/15 dark:hover:border-white/40 transition-colors"
           >
             Try the free YouTube course
           </Link>

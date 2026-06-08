@@ -249,7 +249,7 @@ export default function HomePage() {
             Stop taking notes, start building your{" "}
             <em className="font-serif">Second Brain</em>
           </h1>
-          <p className="mt-6 text-xl text-ink-muted leading-relaxed">
+          <p className="mt-6 text-xl text-ink-muted dark:text-zinc-400 leading-relaxed">
             Transform information overload into a database of insights.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -261,13 +261,13 @@ export default function HomePage() {
             </a>
             <Link
               href="/syllabus"
-              className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 transition-colors"
+              className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 dark:border-white/15 dark:hover:border-white/40 transition-colors"
             >
               See the syllabus
             </Link>
             <Link
               href="/blog/free-youtube-course-logseq"
-              className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 transition-colors"
+              className="inline-flex items-center px-5 py-3 rounded-md border border-black/15 hover:border-black/40 dark:border-white/15 dark:hover:border-white/40 transition-colors"
             >
               Free YouTube course
             </Link>
@@ -278,11 +278,11 @@ export default function HomePage() {
       {/* Institutional social-proof logo strip — uniform grid so the
           logos read as a coherent set instead of free-floating images of
           wildly different aspect ratios. */}
-      <section className="mx-auto max-w-6xl px-6 py-12 border-t border-black/10">
-        <p className="max-w-3xl text-lg text-ink-muted leading-relaxed">
+      <section className="mx-auto max-w-6xl px-6 py-12 border-t border-black/10 dark:border-white/10">
+        <p className="max-w-3xl text-lg text-ink-muted dark:text-zinc-400 leading-relaxed">
           Master Logseq with a proven system used by knowledge workers at
           leading institutions.{" "}
-          <strong className="text-ink">Join over 1 000 thinkers</strong> who
+          <strong className="text-ink dark:text-zinc-100">Join over 1 000 thinkers</strong> who
           have levelled up their note-taking.
         </p>
         <ul className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-8 items-center">
@@ -297,7 +297,7 @@ export default function HomePage() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="max-h-10 md:max-h-12 max-w-[140px] w-auto object-contain"
+                className="max-h-10 md:max-h-12 max-w-[140px] w-auto object-contain dark:invert dark:opacity-70"
               />
             </li>
           ))}
@@ -305,7 +305,7 @@ export default function HomePage() {
       </section>
 
       {/* Pain points */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
+      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10 dark:border-white/10">
         <div className="max-w-prose">
           <p className="text-lg leading-relaxed">
             In a world of endless information, traditional note-taking
@@ -323,17 +323,17 @@ export default function HomePage() {
           {painPoints.map((p) => (
             <li
               key={p.bold}
-              className="p-6 rounded-lg bg-surface-subtle text-lg leading-relaxed"
+              className="p-6 rounded-lg bg-surface-subtle dark:bg-white/5 text-lg leading-relaxed"
             >
-              <strong className="text-ink">{p.bold}</strong>{" "}
-              <span className="text-ink-muted">{p.body}</span>
+              <strong className="text-ink dark:text-zinc-100">{p.bold}</strong>{" "}
+              <span className="text-ink-muted dark:text-zinc-400">{p.body}</span>
             </li>
           ))}
         </ul>
       </section>
 
       {/* Bridge + outcomes — whole section on surface-subtle for rhythm */}
-      <section className="border-t border-black/10 bg-surface-subtle">
+      <section className="border-t border-black/10 dark:border-white/10 bg-surface-subtle dark:bg-zinc-900">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="max-w-prose space-y-6 text-lg leading-relaxed">
             <p>
@@ -368,8 +368,8 @@ export default function HomePage() {
                   <path d="M5 10.5l3.5 3.5L15 7" />
                 </svg>
                 <span>
-                  <strong className="text-ink">{o.bold}</strong>{" "}
-                  <span className="text-ink-muted">{o.body}</span>
+                  <strong className="text-ink dark:text-zinc-100">{o.bold}</strong>{" "}
+                  <span className="text-ink-muted dark:text-zinc-400">{o.body}</span>
                 </span>
               </li>
             ))}
@@ -378,7 +378,7 @@ export default function HomePage() {
       </section>
 
       {/* Features — what you'll learn */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
+      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10 dark:border-white/10">
         <div className="max-w-prose space-y-6 text-lg leading-relaxed">
           <p>
             <strong>Save yourself countless hours</strong> trying to figure it
@@ -401,7 +401,7 @@ export default function HomePage() {
           {features.map((f) => (
             <article
               key={f.title}
-              className="p-8 rounded-lg border border-black/10 bg-white"
+              className="p-8 rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-800"
             >
               <div className="flex items-center gap-4">
                 <div className="inline-flex items-center justify-center w-12 h-12 flex-shrink-0 rounded-lg bg-accent/10 text-accent">
@@ -424,7 +424,7 @@ export default function HomePage() {
                   {f.title}
                 </h3>
               </div>
-              <p className="mt-4 text-ink-muted leading-relaxed">{f.body}</p>
+              <p className="mt-4 text-ink-muted dark:text-zinc-400 leading-relaxed">{f.body}</p>
             </article>
           ))}
         </div>
@@ -446,7 +446,7 @@ export default function HomePage() {
       </section>
 
       {/* Who is the course for */}
-      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10">
+      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-black/10 dark:border-white/10">
         <h2 className="font-serif text-3xl tracking-tight">
           Who is the course for?
         </h2>
@@ -455,10 +455,10 @@ export default function HomePage() {
           {audience.map((a) => (
             <li
               key={a.title}
-              className="p-6 rounded-lg bg-surface-subtle"
+              className="p-6 rounded-lg bg-surface-subtle dark:bg-white/5"
             >
               <h3 className="font-serif text-xl">{a.title}</h3>
-              <p className="mt-2 text-sm text-ink-muted leading-relaxed">
+              <p className="mt-2 text-sm text-ink-muted dark:text-zinc-400 leading-relaxed">
                 {a.body}
               </p>
             </li>
@@ -467,7 +467,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials — JS-rendered on live site, fetch came back empty */}
-      <section className="border-t border-black/10 bg-surface-subtle">
+      <section className="border-t border-black/10 dark:border-white/10 bg-surface-subtle dark:bg-zinc-900">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <h2 className="font-serif text-3xl tracking-tight">
             What existing users have said
@@ -479,20 +479,20 @@ export default function HomePage() {
       </section>
 
       {/* Pricing */}
-      <section className="border-t border-black/10 bg-surface-subtle">
+      <section className="border-t border-black/10 dark:border-white/10 bg-surface-subtle dark:bg-zinc-900">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center">
           <h2 className="font-serif text-3xl md:text-4xl tracking-tight">
             Ready to build a <em className="font-serif">Second Brain</em> that
             works as brilliantly as your first?
           </h2>
 
-          <p className="mt-4 mx-auto max-w-xl text-base text-ink-muted leading-relaxed">
-            Over <strong className="text-ink">100 in-depth tutorials</strong>,
+          <p className="mt-4 mx-auto max-w-xl text-base text-ink-muted dark:text-zinc-400 leading-relaxed">
+            Over <strong className="text-ink dark:text-zinc-100">100 in-depth tutorials</strong>,
             detailed workflow walkthroughs, and a structured path from the
             basics to advanced mastery — yours for life.
           </p>
 
-          <div className="relative mt-12 mx-auto max-w-md rounded-2xl bg-white shadow-xl shadow-black/[0.07] ring-1 ring-black/5 overflow-hidden text-left">
+          <div className="relative mt-12 mx-auto max-w-md rounded-2xl bg-white dark:bg-zinc-800 shadow-xl shadow-black/[0.07] dark:shadow-none ring-1 ring-black/5 dark:ring-white/10 overflow-hidden text-left">
             <div className="h-1.5 bg-accent" />
 
             <div className="p-10">
@@ -500,18 +500,18 @@ export default function HomePage() {
                 <span className="font-serif text-7xl font-bold leading-none tracking-tight">
                   $59
                 </span>
-                <span className="text-sm font-medium text-ink-muted">USD</span>
+                <span className="text-sm font-medium text-ink-muted dark:text-zinc-400">USD</span>
               </div>
-              <p className="mt-2 text-xs uppercase tracking-wider text-ink-muted">
+              <p className="mt-2 text-xs uppercase tracking-wider text-ink-muted dark:text-zinc-400">
                 One-time payment &middot; Lifetime access
               </p>
 
-              <p className="mt-6 text-base text-ink-muted leading-relaxed">
+              <p className="mt-6 text-base text-ink-muted dark:text-zinc-400 leading-relaxed">
                 Logseq Mastery — a self-paced video course with detailed
                 workflow walkthroughs.
               </p>
 
-              <ul className="mt-6 space-y-3 text-ink">
+              <ul className="mt-6 space-y-3 text-ink dark:text-zinc-100">
                 {pricingBullets.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <svg
@@ -538,7 +538,7 @@ export default function HomePage() {
                 Enroll now for full access
               </a>
 
-              <p className="mt-5 flex items-center justify-center gap-2 text-sm text-ink-muted">
+              <p className="mt-5 flex items-center justify-center gap-2 text-sm text-ink-muted dark:text-zinc-400">
                 <svg
                   className="w-4 h-4 flex-shrink-0 text-accent"
                   viewBox="0 0 20 20"
@@ -553,7 +553,7 @@ export default function HomePage() {
                   <path d="M7.25 10.25l2 2 3.75-4" />
                 </svg>
                 <span>
-                  <strong className="text-ink">
+                  <strong className="text-ink dark:text-zinc-100">
                     Risk-free, 30-day money-back guarantee
                   </strong>
                 </span>
@@ -564,26 +564,26 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-6 py-16 border-t border-black/10">
+      <section className="mx-auto max-w-3xl px-6 py-16 border-t border-black/10 dark:border-white/10">
         <h2 className="font-serif text-3xl tracking-tight">
           Frequently asked questions
         </h2>
 
-        <div className="mt-10 divide-y divide-black/10">
+        <div className="mt-10 divide-y divide-black/10 dark:divide-white/10">
           {faqs.map((f) => (
             <details key={f.q} className="group py-5">
               <summary className="cursor-pointer list-none flex items-start justify-between gap-4">
                 <span className="font-medium text-lg">{f.q}</span>
-                <span className="mt-1 text-ink-muted transition-transform group-open:rotate-45">
+                <span className="mt-1 text-ink-muted dark:text-zinc-400 transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <div className="mt-3 text-ink-muted leading-relaxed">{f.a}</div>
+              <div className="mt-3 text-ink-muted dark:text-zinc-400 leading-relaxed">{f.a}</div>
             </details>
           ))}
         </div>
 
-        <p className="mt-10 text-ink-muted">
+        <p className="mt-10 text-ink-muted dark:text-zinc-400">
           If you have more questions, please send me an email at{" "}
           <span className="font-medium">
             dario &lsquo;at&rsquo; combiningminds &lsquo;dot&rsquo; org

@@ -19,7 +19,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-black/10">
+    <header className="border-b border-black/10 dark:border-white/10">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-6">
         {/* Brand block — Logseq Mastery alongside a cross-link back to the parent CombiningMinds site. */}
         <div className="flex items-center gap-4">
@@ -29,7 +29,7 @@ export function Nav() {
           <span className="text-ink-muted text-sm hidden md:inline">·</span>
           <a
             href="https://combiningminds.org"
-            className="hidden md:inline text-sm text-ink-muted hover:text-ink transition-colors"
+            className="hidden md:inline text-sm text-ink-muted hover:text-ink dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
           >
             CombiningMinds
           </a>
@@ -41,7 +41,7 @@ export function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="text-ink-muted hover:text-ink transition-colors"
+                  className="text-ink-muted hover:text-ink dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -54,7 +54,7 @@ export function Nav() {
                 type="button"
                 onClick={() => setOpen((o) => !o)}
                 onBlur={() => setTimeout(() => setOpen(false), 150)}
-                className="text-ink-muted hover:text-ink transition-colors flex items-center gap-1"
+                className="text-ink-muted hover:text-ink dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors flex items-center gap-1"
                 aria-expanded={open}
                 aria-haspopup="menu"
               >
@@ -66,14 +66,14 @@ export function Nav() {
               {open && (
                 <ul
                   role="menu"
-                  className="absolute right-0 mt-2 min-w-[220px] rounded-md border border-black/10 bg-white shadow-lg py-1 z-50"
+                  className="absolute right-0 mt-2 min-w-[220px] rounded-md border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 shadow-lg py-1 z-50"
                 >
                   {freeResources.map((r) => (
                     <li key={r.href} role="none">
                       <Link
                         role="menuitem"
                         href={r.href}
-                        className="block px-4 py-2 text-ink-muted hover:bg-surface-subtle hover:text-ink"
+                        className="block px-4 py-2 text-ink-muted hover:bg-surface-subtle hover:text-ink dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-zinc-100"
                         onClick={() => setOpen(false)}
                       >
                         {r.label}
@@ -87,7 +87,7 @@ export function Nav() {
             <li>
               <a
                 href="https://www.logseqmastery.com/school"
-                className="text-ink-muted hover:text-ink transition-colors"
+                className="text-ink-muted hover:text-ink dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
               >
                 Login
               </a>

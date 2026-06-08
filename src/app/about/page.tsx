@@ -83,7 +83,7 @@ export default function AboutPage() {
           </div>
 
           <div className="md:col-span-1">
-            <div className="relative aspect-square w-full max-w-xs overflow-hidden rounded-lg bg-surface-subtle border border-black/10">
+            <div className="relative aspect-square w-full max-w-xs overflow-hidden rounded-lg bg-surface-subtle dark:bg-white/5 border border-black/10 dark:border-white/10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/portrait.jpg"
@@ -96,13 +96,13 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials — JS-rendered on live site, fetch came back empty */}
-      <section className="border-t border-black/10 bg-surface-subtle">
+      <section className="border-t border-black/10 dark:border-white/10 bg-surface-subtle dark:bg-zinc-900">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <h2 className="font-serif text-3xl tracking-tight">
             Some feedback on my Logseq content
           </h2>
-          <div className="mt-10 rounded-lg border border-dashed border-black/15 bg-white p-12 text-center">
-            <p className="text-ink-muted italic">
+          <div className="mt-10 rounded-lg border border-dashed border-black/15 dark:border-white/15 bg-white dark:bg-zinc-800 p-12 text-center">
+            <p className="text-ink-muted dark:text-zinc-400 italic">
               {/* TODO(dario): paste testimonial copy from the rendered live
                   site. The about-page feedback block is a Systeme.io widget
                   and did not come through in the WebFetch. Transcribe

@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { MailLink } from "./MailLink";
 
-const iconClass = "w-5 h-5 text-ink-muted hover:text-ink transition-colors";
+const iconClass = "w-5 h-5 text-ink-muted hover:text-ink dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors";
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-black/10 mt-24">
-      <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-ink-muted">
+    <footer className="border-t border-black/10 dark:border-white/10 mt-24">
+      <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-ink-muted dark:text-zinc-400">
         <p>
-          <span className="font-serif text-base text-ink">Logseq Mastery</span>
+          <span className="font-serif text-base text-ink dark:text-zinc-100">Logseq Mastery</span>
           <span className="mx-2">·</span>
           <span>©{year}. All rights reserved.</span>
           <span className="mx-2">·</span>
@@ -17,7 +17,7 @@ export function Footer() {
             A{" "}
             <Link
               href="https://combiningminds.org"
-              className="underline hover:text-ink"
+              className="underline hover:text-ink dark:hover:text-zinc-100"
             >
               CombiningMinds
             </Link>{" "}

@@ -29,17 +29,17 @@ export default function BlogIndexPage() {
   return (
     <section className="mx-auto max-w-3xl px-6 pt-16 pb-24">
       <h1 className="font-serif text-4xl md:text-5xl tracking-tight">Blog</h1>
-      <p className="mt-4 text-lg text-ink-muted">
+      <p className="mt-4 text-lg text-ink-muted dark:text-zinc-400">
         Notes on Logseq, PKM, and intentional knowledge work.
       </p>
 
       {posts.length === 0 ? (
-        <p className="mt-12 text-ink-muted italic">
+        <p className="mt-12 text-ink-muted dark:text-zinc-400 italic">
           No posts yet. Drop an .mdx file in <code>content/blog/</code> to
           publish.
         </p>
       ) : (
-        <ul className="mt-12 divide-y divide-black/10">
+        <ul className="mt-12 divide-y divide-black/10 dark:divide-white/10">
           {posts.map((p) => {
             const hasCover = Boolean(p.cover && p.coverWidth && p.coverHeight);
             return (
@@ -65,9 +65,9 @@ export default function BlogIndexPage() {
                       {p.title}
                     </h2>
                     {p.description && (
-                      <p className="mt-2 text-ink-muted">{p.description}</p>
+                      <p className="mt-2 text-ink-muted dark:text-zinc-400">{p.description}</p>
                     )}
-                    <p className="mt-2 text-sm text-ink-muted">
+                    <p className="mt-2 text-sm text-ink-muted dark:text-zinc-400">
                       {formatDate(p.date)} · {p.readingMinutes} min read
                     </p>
                     {p.tags && p.tags.length > 0 && (
@@ -75,7 +75,7 @@ export default function BlogIndexPage() {
                         {p.tags.map((tag) => (
                           <li
                             key={tag}
-                            className="px-2.5 py-0.5 rounded-full text-xs bg-surface-subtle text-ink-muted border border-black/10"
+                            className="px-2.5 py-0.5 rounded-full text-xs bg-surface-subtle dark:bg-white/5 text-ink-muted dark:text-zinc-400 border border-black/10 dark:border-white/10"
                           >
                             {tag}
                           </li>

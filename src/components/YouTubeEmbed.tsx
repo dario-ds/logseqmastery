@@ -20,7 +20,7 @@ export function YouTubeEmbed({
     return (
       <div
         className={
-          "aspect-video w-full rounded-lg bg-surface-subtle border border-black/10 flex items-center justify-center text-ink-muted " +
+          "aspect-video w-full rounded-lg bg-surface-subtle dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center text-ink-muted dark:text-zinc-400 " +
           (className ?? "")
         }
       >
@@ -36,7 +36,7 @@ export function YouTubeEmbed({
   }`;
 
   return (
-    <div className={"aspect-video w-full overflow-hidden rounded-lg border border-black/10 " + (className ?? "")}>
+    <div className={"aspect-video w-full overflow-hidden rounded-lg border border-black/10 dark:border-white/10 " + (className ?? "")}>
       <iframe
         src={src}
         title={title}
