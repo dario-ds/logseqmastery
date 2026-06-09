@@ -29,11 +29,10 @@ export const VIDEOS = {
     settingForSuccess: "QYE_HGGwTYU" as string | null,
   },
 
-  // /blog/best-beginner-logseq-videos — 4 videos
+  // /blog/best-beginner-logseq-videos — 3 videos
   bestBeginnerVideos: {
-    mentalModels: null as string | null, // "A guide to the mental models behind Logseq"
-    basicsBlocksAndPages: null as string | null, // "Grasping the basics: blocks and pages"
-    doublingDownBasics: null as string | null, // "Doubling down on the basic building blocks"
-    addingStructure: null as string | null, // "How to think about adding structure to your Logseq database"
+    basicsBlocksAndPages: "ZtRozP8hfEY" as string | null, // "Grasping the basics: blocks and pages"
+    doublingDownBasics: "qtN7qqdeTwU" as string | null, // "Doubling down on the basic building blocks"
+    addingStructure: "8cZdHIgwPro" as string | null, // "How to think about adding structure to your Logseq database"
   },
 } as const;
